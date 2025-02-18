@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин книг</title>
+    <link rel="stylesheet" href="/static/styles/main.css">
+</head>
+<body>
+
+<header>
+    <h1>Магазин книг</h1>
+    <div class="cart-icon" id="cart-icon">
+        🛒 <span id="cart-count">0</span>
+    </div>
+</header>
+
+<div id="message-box" class="message-box hidden">
+    <p id="message-text">Ваше повідомлення тут</p>
+</div>
+
+<nav>
+    <a href="#">Головна</a>
+    <a href="#categories">Категорії</a>
+    <a href="#contacts">Контакти</a>
+    <a href="#about">Про нас</a>
+</nav>
+
+<div class="main-content">
+    <div class="book-card">
+        <img src="/static/images/book1.jpg" alt="Книга 1">
+        <div class="info">
+            <h3>Назва книги 1</h3>
+            <p>Автор: Іван Іванов</p>
+            <div class="price">200 грн</div>
+            <button class="buy-btn" data-book="Назва книги 1" data-price="200">Купити</button>
+        </div>
+    </div>
+    <div class="book-card">
+        <img src="/static/images/book2.jpg" alt="Книга 2">
+        <div class="info">
+            <h3>Назва книги 2</h3>
+            <p>Автор: Петро Петров</p>
+            <div class="price">250 грн</div>
+            <button class="buy-btn" data-book="Назва книги 2" data-price="250">Купити</button>
+        </div>
+    </div>
+    <div class="book-card">
+        <img src="/static/images/book3.jpg" alt="Книга 3">
+        <div class="info">
+            <h3>Назва книги 3</h3>
+            <p>Автор: Олена Оленова</p>
+            <div class="price">300 грн</div>
+            <button class="buy-btn" data-book="Назва книги 3" data-price="300">Купити</button>
+        </div>
+    </div>
+</div>
+
+<!-- Секції для переходу -->
+<div id="categories" class="section">
+    <h2>Категорії книг</h2>
+    <p>Опис категорій та асортименту книг.</p>
+</div>
+
+<div id="contacts" class="section">
+    <h2>Контакти</h2>
+    <p>Телефон: +380 XX XXX XX XX</p>
+    <p>Email: info@bookstore.com</p>
+    <p>Адреса: вул. Книгова, 123</p>
+</div>
+
+<div id="about" class="section">
+    <h2>Про нас</h2>
+    <p>Ми - магазин книг, що пропонує широкий асортимент літератури для різних смаків. Ми прагнемо зробити вашу покупку зручною та приємною.</p>
+</div>
+
+<!-- Кошик -->
+<div id="cart" class="cart">
+    <h2>Кошик</h2>
+    <div id="cart-items"></div>
+    <div id="total-price">Загальна сума: 0 грн</div>
+    <button id="checkout-btn"><a href="/cart">Оформити замовлення </a></button>
+    <button id="close-cart">Закрити кошик</button>
+</div>
+
+<footer>
+    <p>&copy; 2024 Магазин книг. Всі права захищені.</p>
+</footer>
+
+<!-- Підключення скрипта -->
+<script src="/static/JS/script.js"></script>
+<script src="/static/JS/mes.js"></script>
+</body>
+</html>

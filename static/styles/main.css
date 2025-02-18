@@ -1,0 +1,377 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+}
+
+.cart-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: #f60;
+    padding: 5px 10px;
+    border-radius: 50%;
+    color: white;
+}
+
+nav {
+    background-color: #444;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.book-card {
+    background-color: white;
+    width: 200px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.book-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.book-card .info {
+    padding: 15px;
+}
+
+.book-card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.book-card p {
+    color: #777;
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+
+.book-card .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #f60;
+}
+
+.book-card .buy-btn {
+    background-color: #f60;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.book-card .buy-btn:hover {
+    background-color: #e55d00;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+/* Кошик */
+.cart {
+    position: fixed;
+    right: -350px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.cart.open {
+    right: 0; /* Кошик повністю відкривається з правого боку */
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2); /* Додана тінь для виділення */
+    transition: right 0.3s ease, box-shadow 0.3s ease; /* Плавний ефект відкриття */
+    border-left: 2px solid #f60; /* Акцентний колір для краю */
+}
+
+/* Вміст кошика */
+.cart.open #cart-items {
+    margin-top: 15px; /* Відступ між заголовком та елементами кошика */
+    font-size: 14px;
+}
+
+/* Кнопка закриття кошика */
+#close-cart {
+    background-color: #f44336; /* Червоний колір для кнопки закриття */
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#close-cart:hover {
+    background-color: #d32f2f; /* Темніший червоний на наведенні */
+    transform: scale(1.05); /* Легке збільшення */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тінь при наведенні */
+}
+
+/* Заголовок кошика */
+.cart h2 {
+    font-size: 18px;
+    color: #333;
+    border-bottom: 2px solid #f60; /* Лінія-розділювач */
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+#cart-items {
+    margin-bottom: 20px;
+}
+
+#total-price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#checkout-btn {
+    background-color: #f60;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;  /* Це виправить можливу анімацію або рух */
+    width: 100%;
+    bottom: 0;
+}
+/* Все залишається як в попередньому CSS */
+.cart {
+    position: fixed;
+    right: -350px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.cart.open {
+    right: 0;
+}
+
+#cart-items {
+    margin-bottom: 20px;
+}
+
+#total-price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#checkout-btn, #close-cart {
+    background-color: #f60;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#close-cart {
+    background-color: #f44336;
+}
+
+.cart-image{
+    width: auto;
+    max-height: 150px;
+}
+/* Equal Height for Images */
+.book-card img {
+    width: 100%;
+    height: 250px; /* Fixed height for uniformity */
+    object-fit: cover; /* Ensures the image is cropped proportionally */
+    border-bottom: 1px solid #ddd; /* Optional border for separation */
+}
+
+/* Modern Button Styling */
+.book-card .buy-btn {
+    background-color: #f44336; /* Slightly softer red */
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth hover effect */
+}
+
+.book-card .buy-btn:hover {
+    background-color: #e53935; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+/* Стиль для кнопки видалення товару */
+.remove-btn {
+    background-color: #f44336; /* Яскравий червоний */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Анімація при наведенні */
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px; /* Простір над кнопкою */
+}
+
+.remove-btn:hover {
+    background-color: #d32f2f; /* Темніший червоний при наведенні */
+    transform: scale(1.05); /* Легке збільшення */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тінь при наведенні */
+}
+/* Основний контейнер для кошика */
+.cart-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* щоб сторінка займала всю висоту вікна */
+    background-color: #f9f9f9; /* світло-сірий фон */
+    font-family: 'Arial', sans-serif; /* мінімалістичний шрифт */
+    padding: 20px;
+  }
+  
+  /* Стиль для контейнера товарів */
+  .cart-container {
+    width: 100%;
+    max-width: 800px; /* обмежуємо максимальну ширину */
+    background-color: #fff; /* білий фон для кошика */
+    padding: 20px;
+    border-radius: 8px; /* округлені кути */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* легка тінь */
+  }
+  
+  /* Стиль для кожного товару */
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0; /* тонка лінія між товарами */
+  }
+  
+  .cart-item:last-child {
+    border-bottom: none; /* не ставимо лінію для останнього елемента */
+  }
+  
+  /* Стиль для кнопки "Оформити замовлення" */
+  .checkout-btn {
+    background-color: #007bff; /* синій фон */
+    color: #fff; /* білий текст */
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #0056b3; /* темніший синій при наведенні */
+  }
+  
+  .message-box {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
